@@ -1,3 +1,4 @@
+import Factories.ApplePaymentFactory;
 import Factories.CreditCardFactory;
 import Factories.CryptoCoinsFactory;
 import Factories.PayPalFactory;
@@ -13,6 +14,8 @@ public class Main {
         service.SendPayment(new CryptoCoinsFactory(1000),500);
 
         service.SendPayment(new PayPalFactory("user@example.com"), 500);
-        
+        service.SendPayment(new PayPalFactory("invalid-email"), 500);
+
+        service.SendPayment(new ApplePaymentFactory("iPhone"), 500);
     }   
 }
