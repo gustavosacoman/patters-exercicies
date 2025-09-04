@@ -1,4 +1,4 @@
 package Processing;
 public interface Payment {
-    public void PaymentProcess(double value);
+    public String PaymentProcess(double value);
 }

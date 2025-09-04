@@ -1,16 +1,21 @@
 package Processing;
 public class CreditCard implements Payment{
 
-    public String CardNumber;
+    private String CardNumber;
+
+    public CreditCard(String CardNumber) {
+        this.CardNumber = CardNumber;
+    }
 
     @Override
-    public void PaymentProcess(double value) {
+    public String PaymentProcess(double value) {
 
-        if (!verifyCardNumber(CardNumber)){
+        if (!verifyCardNumber(this.CardNumber)) {
             System.out.println("Your card number is invalid, enter a true card number");
-            return;
+            return "Invalid card number";
         }
        System.out.println("Processing your payment: R$" + value);
+       return "Payment processed successfully";
     }
 
     public boolean verifyCardNumber(String CardNumber){
